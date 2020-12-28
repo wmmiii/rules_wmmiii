@@ -13,9 +13,12 @@ def _gcs_upload_impl(ctx):
 
     cmd = "printf '%%s\\n' %s | gsutil -m cp -I gs://%s" % (paths, bucket)
 
+    print(cmd)
+
     ctx.actions.write(
         output = ctx.outputs.executable,
         content = cmd,
+        is_executable = True,
     )
     return [DefaultInfo(
         files = depset(ctx.files.srcs),
