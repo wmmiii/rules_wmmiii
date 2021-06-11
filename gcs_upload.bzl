@@ -33,5 +33,5 @@ gcs_upload = rule(
         "bucket": attr.string(),
     },
     executable = True,
-    doc = "Uplaod to GCS."
+    doc = "Upload to GCS."
 )
