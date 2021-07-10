@@ -19,7 +19,7 @@ def _gcs_upload_impl(ctx):
     )
     return [DefaultInfo(
         files = depset(ctx.files.srcs),
-        data_runfiles = ctx.runfiles(file_list),
+        runfiles = ctx.runfiles(file_list),
     )]
 
 gcs_upload = rule(
