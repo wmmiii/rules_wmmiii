@@ -7,7 +7,7 @@ def _gcs_upload_impl(ctx):
         if file.is_directory:
             fail("Directories are not supported yet!")
         file_list.append(file)
-        path_list.append(file.path)
+        path_list.append(file.short_path)
 
     paths = " ".join(path_list)
 
